@@ -1,14 +1,34 @@
 // ./src/index.js
 
 //importing the dependencies
-const { app, startDatabase, getProducts, deleteProduct, updateProduct, createProduct } = require('./app-common.js')
-
+const {
+  app,
+  createLogo,
+  createProduct,
+  deleteLogo,
+  deleteProduct,
+  getLogos,
+  getProducts,
+  startDatabase,
+  updateLogo,
+  updateProduct
+} = require('./app-common.js')
 
 // endpoint to return all products
 // sets up the handler for requests to "/"
 // much like a switch statement
 app.get('/', async (req, res) => {
+  res.send({
+    urls: ['/products', 'logos']
+  })
+});
+
+app.get('/products', async (req, res) => {
   res.send(await getProducts());
+});
+
+app.get('/logos', async (req, res) => {
+  res.send(await getLogos());
 });
 
 // we name our parameters apiRequest and apiResponse here but
