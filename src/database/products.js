@@ -1,6 +1,6 @@
-const {getDatabase} = require('./mongo-common');
+const { getDatabase } = require('./mongo-common');
 // https://docs.mongodb.com/manual/reference/method/ObjectId/
-const {ObjectID} = require('mongodb');
+const { ObjectID } = require('mongodb');
 
 // a "collection" in mongo is a lot like a list which is a lot like an Array
 const collectionName = 'products';
@@ -8,7 +8,7 @@ const collectionName = 'products';
 async function createProduct(product) {
   const database = await getDatabase();
   // for `insertOne` info, see https://docs.mongodb.com/manual/reference/method/js-collection/
-  const {insertedId} = await database.collection(collectionName).insertOne(product);
+  const { insertedId } = await database.collection(collectionName).insertOne(product);
   return insertedId;
 }
 

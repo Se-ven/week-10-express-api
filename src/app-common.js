@@ -3,12 +3,12 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const {startDatabase} = require('./database/mongo-common');
+const { startDatabase } = require('./database/mongo-common');
 // alternative:
 // const mongo = require('./database/mongo-common');
 // mongo.startDatabase
 
-const {deleteProduct, updateProduct, createProduct, getProducts} = require('./database/products');
+const { deleteProduct, updateProduct, createProduct, getProducts } = require('./database/products');
 
 // Other entities: Logos, CustomizationOptions, Material, Patterns
 
